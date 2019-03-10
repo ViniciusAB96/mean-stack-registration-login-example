@@ -4,8 +4,8 @@ require('rootpath')();
 // separando de vez api e app. Em um desenvolvimento mais sofisticado, onde você deseje fazer balanceamento de carga
 // separadamente para cada ponto da solução, você teria que criar dois server.js e quebrar de vez a aplicação
 var express = require('express');
-var app = express();
-var api = express();
+var app = express(); //roda no navegador
+var api = express(); //roda no serveer
 // Inicializando o gerenciamento de sessão. Iremos usar esse gerenciamento para armazenar o token da API e o userID logado.
 var session = require('express-session');
 // bibloteca que ajuda no parse de mensagens requisitadas que contém JSON
@@ -53,6 +53,7 @@ api.use('/api', expressJwt({ secret: config.secret }).unless({ path: ['/api/user
 // A cada require, o js é inicializado
 app.use('/login', require('./controllers/login.controller'));
 app.use('/register', require('./controllers/register.controller'));
+app.use('/listagemPerguntas', require('./controllers/api/perguntas.controller'));
 app.use('/app', require('./controllers/app.controller'));
 app.use('/api/users', require('./controllers/api/users.controller'));
 

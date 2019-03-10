@@ -1,0 +1,20 @@
+<h1>Questionamentos</h1>
+<div class="form-container">
+    <form method="post">
+        <div class="form-group">
+            <label for="titulo">Titulo Pergunta</label>
+            <input type="text" id="titulo" class="form-control" ng-model="perg.pergunta.titulo" required />
+        </div>
+        <div class="form-group">
+            <label for="subtitulo">Subtitulo</label>
+            <input type="text" id="subtitulo" class="form-control" ng-model="perg.pergunta.subtitulo" required />
+        </div>
+        <div class="form-group">
+            <label for="Pergunta">Pergunta</label>
+            <input type="text" id="pergunta" class="form-control" ng-model="perg.pergunta.pergunta" required />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" ng-click="perg.savePergunta()">Salvar Pergunta</button>
+        </div>
+    </form>
+</div>

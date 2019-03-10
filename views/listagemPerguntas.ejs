@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<h2>Lista de Perguntas</h2>
+<a href="/admin/postagens/add"><button class="btn btn-success">Nova postagem</button></a>
+
+<!--<% drinks.forEach(function(drink) { %> -->
+
+    <div class="card mt-4">
+            <% if(locals.error) { %>
+                <div class="alert alert-danger"><%= error %></div>
+            <% } %>
+            <% if(locals.success) { %>
+                <div class="alert alert-success"><%= success %></div>
+            <% } %>
+        <div class="card-body">
+            <h4 value="<%= locals.titulo || '' %>">Título: <%= locals.titulo %></h4>
+            <p value="<%= locals.subtitulo || '' %>">Subtitulo: <%= locals.subtitulo %></p>
+            <small>Data: <!-- <%= drink.name %>--></small>
+            <small value="<%= locals.pergunta || '' %>">Pergunta:  <%= locals.pergunta %></small><br>
+            <a href="/admin/postagens/edit/<!-- <%= drink.name %>-->"><button class="btn btn-success mt-2">Editar postagem</button></a>
+             <a href="/admin/postagens/deletar/<!-- <%= drink.name %>-->"><button class="btn btn-danger mt-2">Deletar postagem</button></a>
+        </div>
+    </div>
+<!-- <% }); %> -->
+<!--
+<%- include('partials/footer') %>
+
+-->
